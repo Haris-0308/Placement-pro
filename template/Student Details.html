@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background: linear-gradient(to left, #2d1b4b, #5b4681);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #2d1b4b;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+
+        .btn {
+  width: 200px;
+  font-size: 20px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #c38b8b;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  margin-left: 200px;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.btn::before {
+  position: absolute;
+  content: "";
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    124deg,
+    #ff2400,
+    #e81d1d,
+    #e8b71d,
+    #e3e81d,
+    #1de840,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  animation: move 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #555273;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <form action="#" method="post" id="registrationForm">
+
+      <div class="form-group">
+            <label for="registerNumber">Register Number:</label>
+            <input type="text" id="registerNumber" name="registerNumber" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="ug1stSemGPA">UG 1st Sem CGPA:</label>
+            <input type="text" id="ug1stSemGPA" name="ug1stSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug2ndSemGPA">UG 2nd Sem CGPA:</label>
+            <input type="text" id="ug2ndSemGPA" name="ug2ndSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug3rdSemGPA">UG 3rd Sem CGPA:</label>
+            <input type="text" id="ug3rdSemGPA" name="ug3rdSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug4thSemGPA">UG 4th Sem CGPA:</label>
+            <input type="text" id="ug4thSemGPA" name="ug4thSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug5thSemGPA">UG 5th Sem CGPA:</label>
+            <input type="text" id="ug5thSemGPA" name="ug5thSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug6thSemGPA">UG 6th Sem CGPA:</label>
+            <input type="text" id="ug6thSemGPA" name="ug6thSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug7thSemGPA">UG 7th Sem CGPA:</label>
+            <input type="text" id="ug7thSemGPA" name="ug7thSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="ug8thSemGPA">UG 8th Sem CGPA:</label>
+            <input type="text" id="ug8thSemGPA" name="ug8thSemGPA" required>
+        </div>
+        <div class="form-group">
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+        </div>
+        <div class="form-group">
+            <label for="languagesKnown">Languages Known:</label>
+            <input type="text" id="languagesKnown" name="languagesKnown" required>
+        </div>
+        <div class="form-group">
+            <label for="gapInStudies">Any gap in studies?</label>
+            <input type="text" id="gapInStudies" name="gapInStudies" required>
+        </div>
+        <div class="form-group">
+            <label for="dayscholarHostel">Dayscholar/Hostel:</label>
+            <input type="text" id="dayscholarHostel" name="dayscholarHostel" required>
+        </div>
+        <div class="form-group">
+            <label for="placementmark">placement mark</label>
+            <input type="text" id="mark" name="mark" required>
+        </div>
+        <div class="form-group">
+            <label for="leetcode">leetcode link</label>
+            <input type="text" id="leetcode" name="leetcode" required>
+        </div>
+        <div class="form-group">
+            <label for="fullAddress">Full Address:</label>
+            <textarea id="fullAddress" name="fullAddress" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        
+        // Your form validation logic can go here
+        
+        // Alert message
+        alert('Form submitted successfully!');
+    });
+</script>
+
+
+
+</body>
+</html>

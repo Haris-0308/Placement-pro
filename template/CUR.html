@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placementpro kec</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="D:\HACKATHON\template\static\blur.css">
+<style>
+        /* Custom colors */
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+
+        .jumbotron {
+            background: linear-gradient(to left, #2d1d4b, #5b4681);
+            color: white;
+            position: relative;
+            z-index: 2;
+            padding: 40px 0;
+            justify-content: left;
+            align-items: start;
+        }
+
+        .jumbotron h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .card {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .footer {
+            background-color: #573b8a;
+            color: rgb(68, 57, 226);
+            padding: 20px 0;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            cursor: none;
+        }
+
+        .kkkk {
+            text-align: center;
+            margin-left: auto;
+        }
+
+        .cursor-dot {
+            width: 15px;
+            height: 15px;
+            background-color: rgb(226, 241, 82);
+            position: fixed;
+            z-index: 3;
+        }
+
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid hwb(73 34% 6%);
+            position: fixed;
+            z-index: 3;
+        }
+
+        .cursor-dot{position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 60%;
+            z-index: 3;
+            pointer-events: none;}
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f2f2;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .logos {
+            overflow: hidden;
+            padding: 60px 0;
+            background: white;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logos:before,
+        .logos:after {
+            position: absolute;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            content: "";
+            z-index: 2;
+        }
+
+        .logos:before {
+            left: 0;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+        }
+
+        .logos:after {
+            right: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .logos:hover .logos-slide {
+            animation-play-state: paused;
+        }
+
+        .logos-slide {
+            display: inline-block;
+            animation: 35s slide infinite linear;
+        }
+
+        .logos-slide img {
+            height: 50px;
+            margin: 0 40px;
+        }
+        #recruiters h2 {
+            color: white;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            margin-top: -50px; 
+        }
+        .navbar {
+            background-color: #5b4681; /* Dark background color */
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff; /* White text color */
+        }
+
+        .nav-link:hover {
+            color: #5b4681; /* Yellow on hover */
+        }
+
+        .dropdown-menu {
+            background-color: #343a40; /* Dark background color for dropdown */
+            border: none;
+            border-radius: 0;
+            margin-top: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+            visibility: hidden;
+        }
+
+        .dropdown-item {
+            color: #fff !important; /* White text color for dropdown items */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #916dd3; /* Yellow background color on hover */
+            color: #000 !important; /* Black text color on hover */
+        }
+
+        .dropdown-item.active, 
+        .dropdown-item:active {
+            background-color: #007bff !important; /* Blue color when active */
+            color: #fff !important; /* White text color when active */
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* Centering navigation items */
+        .navbar-nav {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-btn {
+            margin-right: 15px; /* Adjust the margin as per your preference */
+        }
+
+</style>
+
+</head>
+<body  style=" background: linear-gradient(to left, #2d1d4b, #5b4681);">
+<!-- Background Video 
+<video autoplay muted loop id="myVideo">
+    <source src="C:\Users\dines\Downloads\kec.mp4" type="video/mp4">
+</video>-->
+<!-- Custom Cursors -->
+<div class="cursor-dot" data-cursor-dot></div>
+<div class="cursor-outline" data-cursor-outline></div>
+<div id="blurry-filter">
+    <header>
+        <div>
+            <article id="title"><span class="parent" style="color: white;">Kongu Engineering College</span><br/><span class="name" style="color: white;">Placementpro</span></article>
+            <article id="reference">
+                <img src="D:\HACKATHON\template\image\WhatsApp-removebg-preview.png" style="height: 100px;">
+            </article>
+        </div>
+    </header>
+    </div>
+        
+        <br><br><br><br><br><br><br>
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #5b4681;">
+            <a class="navbar-brand" href="CUR.html"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
+              </svg></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPlacement" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Placement
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownPlacement">
+                            <a class="dropdown-item" href="training.html">Training</a>
+                            <a class="dropdown-item" href="past placement.html">Status</a>
+                         
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recruiter login.html">For Recruiters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Student Login.html">For Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alumni login.html">Alumni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="placement contact.html">Contact</a>
+                    </li>
+                    <!-- Button added to the navbar -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item navbar-btn">
+                  
+                        <button class="btn btn-primary" onclick="document.location='Admin.html'">ADMIN</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="D:\HACKATHON\template\image\c1.jpg" class="d-block w-100" alt="Campus Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="D:\HACKATHON\template\image\tbi_kec_1826x599.jpg" class="d-block w-100"
+                     alt="Campus Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="D:\HACKATHON\template\image\swachh_bharat_1826x599.jpg" class="d-block w-100"
+                     alt="Campus Image 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- Placement Statistics -->
+    <section id="placements" class="my-5">
+        <h2 class="text-center mb-4" style="color: white;">Placement Statistics</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">2021</h5>
+                        <p class="card-text">Placement: 85%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">2022</h5>
+                        <p class="card-text">Placement: 90%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">2023</h5>
+                        <p class="card-text">Placement: 92%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Top Recruiters -->
+    <section id="recruiters" class="my-5">
+        <h2 class="text-center mb-4">Top Recruiters</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="D:\HACKATHON\template\image\images_172x180.png" class="card-img-top"
+                         alt="Tata Consultancy Services (TCS)">
+                    <div class="card-body">
+                        <h5 class="card-title">Tata Consultancy Services (TCS)</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="D:\HACKATHON\template\image\OIP.jpeg" class="card-img-top" alt="Infosys">
+                    <div class="card-body">
+                        <h5 class="card-title">Infosys</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="D:\HACKATHON\template\image\wipro-logo-771157_172x180.jpg" class="card-img-top"
+                         alt="Wipro">
+                    <div class="card-body">
+                        <h5 class="card-title">Wipro</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="D:\HACKATHON\template\image\download_172x180.jpeg" class="card-img-top"
+                         alt="Cognizant">
+                    <div class="card-body">
+                        <h5 class="card-title">Cognizant</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--infinite logo-->
+    <div class="logos">
+        <div class="logos-slide">
+            <img src="D:\HACKATHON\template\image\Wipro.svg"/>
+            <img src="D:\HACKATHON\template\image\polaris.svg"/>
+            <img src="D:\HACKATHON\template\image\Wabag.svg"/>
+            <img src="D:\HACKATHON\template\image\infosys.svg"/>
+            <img src="D:\HACKATHON\template\image\Fanuc.svg"/>
+            <img src="D:\HACKATHON\template\image\Huawei.svg"/>
+            <img src="D:\HACKATHON\template\image\HP.svg"/>
+            <img src="D:\HACKATHON\template\image\Vedanta.svg"/>
+            <img src="D:\HACKATHON\template\image\Tech_Mahindra.svg"/>
+            <img src="D:\HACKATHON\template\image\Britannia.svg"/>
+            <img src="D:\HACKATHON\template\image\renault-nissan.svg"/>
+            <img src="D:\HACKATHON\template\image\KBR.svg"/>
+            <img src="D:\HACKATHON\template\image\Hyundai.svg"/>
+            <img src="D:\HACKATHON\template\image\ZOHO.svg"/>
+            <img src="D:\HACKATHON\template\image\ITC.svg"/>
+        </div>
+    </div>
+    <footer class="footer mt-5">
+        <div class="text-center">
+            <p style="color: white;">&copy; 2024 Kongu Engineering College Placements</p>
+        </div>
+    </footer>
+</div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    const cursorDot = document.querySelector("[data-cursor-dot]");
+    const cursorOutline = document.querySelector("[data-cursor-outline]");
+    window.addEventListener("mousemove", function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, {duration: 500, fill: "forwards"});
+    });
+
+    var copy = document.querySelector(".logos-slide").cloneNode(true);
+    document.querySelector(".logos").appendChild(copy);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Applicants</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to left, #2d1d4b, #5b4681);
+        
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #2d1b4b;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(238, 238, 238, 0.993);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        @media screen and (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+            th, td {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <span style="color: white"> <h2>View Applicants</h2> </span>
+    <table>
+        <tr>
+           <span style="color: black;"> <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Resume</th>
+            <th>View Details</th>
+           </span>
+        </tr>
+        <tr>
+            
+            <td><span style="color: white">John Doe</span></td>
+            <td><span style="color: white">john@example.com</span></td>
+            <td><span style="color: white">123-456-7890</span> </td>
+            <td><span style="color: white"><a href="resume_john_doe.pdf" style="color: white;">Download</a></span></td>
+            <td><span style="color: white"><a href="applicant_details_john_doe.html"style="color: white;">View</a></span></td>
+       
+        </tr>
+        <!-- Add more rows for other applicants -->
+    </table>
+</div>
+
+</body>
+</html>

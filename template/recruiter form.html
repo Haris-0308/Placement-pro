@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruiter Information Form</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="D:\HACKATHON\template\static\Recruiter Form.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Recruiter Information Form</h2>
+    <form id="recruiterForm">
+        <div class="form-group">
+            <label for="companyName">Company Name:</label>
+            <input type="text" class="form-control" id="companyName" name="companyName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="coreCompany">Core of the Company:</label>
+            <input type="text" class="form-control" id="coreCompany" name="coreCompany" required>
+        </div>
+
+        <div class="form-group">
+            <label for="recruiterPosition">Position of the Recruiter:</label>
+            <input type="text" class="form-control" id="recruiterPosition" name="recruiterPosition" required>
+        </div>
+
+        <div class="form-group">
+            <label for="campusVisitDate">Date of Visiting Campus:</label>
+            <input type="date" class="form-control" id="campusVisitDate" name="campusVisitDate">
+        </div>
+
+        <div class="form-group">
+            <label for="placementDriveDate">Date of Placement Drives:</label>
+            <input type="date" class="form-control" id="placementDriveDate" name="placementDriveDate">
+        </div>
+
+        <div class="form-group">
+            <label for="prePlacementTalkDate">Date of Pre-Placement Talk:</label>
+            <input type="date" class="form-control" id="prePlacementTalkDate" name="prePlacementTalkDate">
+        </div>
+
+        <div class="form-group">
+            <label for="placementDriveDescription">Placement Drive Description:</label>
+            <textarea class="form-control" id="placementDriveDescription" name="placementDriveDescription" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="placementPolicies">Placement Policies:</label>
+            <textarea class="form-control" id="placementPolicies" name="placementPolicies" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="departments">Departments for Recruitment:</label>
+            <input type="text" class="form-control" id="departments" name="departments">
+        </div>
+
+        <div class="form-group">
+            <label for="vacancies">Number of Vacancies:</label>
+            <input type="number" class="form-control" id="vacancies" name="vacancies">
+        </div>
+
+        <div class="form-group">
+            <label for="salaryRange">Salary Range:</label>
+            <input type="text" class="form-control" id="salaryRange" name="salaryRange">
+        </div>
+
+        <div class="form-group">
+            <label for="postings">Postings:</label>
+            <input type="text" class="form-control" id="postings" name="postings">
+        </div>
+
+        <div class="form-group">
+            <label for="branch">Branch:</label>
+            <input type="text" class="form-control" id="branch" name="branch">
+        </div>
+
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+document.getElementById('recruiterForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    
+    // Your form validation logic can go here
+    
+    // Alert message
+    alert('Form submitted successfully!');
+});
+</script>
+</body>
+</html>

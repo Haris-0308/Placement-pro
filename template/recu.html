@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Cell Recruiter Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            cursor: none; /* Hide cursor */
+            background: linear-gradient(to left, #2d1b4b, #5b4681);
+            background-size: cover;
+            background-position: center;
+        }
+        header {
+            background-color: #2d1b4b;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        nav {
+            background-color: #2d1b4b;
+            padding: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            box-shadow: 0 0 20px rgba(238, 238, 238, 0.993);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+        main {
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .cursor-dot {
+            width: 15px;
+            height: 15px;
+            background-color: rgb(226, 241, 82);
+            position: fixed;
+            z-index: 3;
+        }
+
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid hwb(73 34% 6%);
+            position: fixed;
+            z-index: 3;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 60%;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <header>
+        <h1>Placement Cell Recruiter Portal</h1>
+    </header>
+    <nav>
+        <a href="CUR.html" style="color: white;">Home</a>
+        <a href="recruiter form.html" style="color: white;">Post a Job</a>
+        <a href="veiw applicant.html" style="color: white;">View Applicants</a>
+        <a href="Placement Contact.html" style="color: white;">Contact Us</a>
+    </nav>
+    <main>
+        <h2 style="color: white;">Welcome, Recruiter!</h2>
+        <p style="color: white;">This is your portal to manage job postings and view applicants for your company.</p>
+        <p style="color: white;">Use the links above to navigate through the portal.</p>
+    </main>
+
+    <script>
+       const cursorDot = document.querySelector("[data-cursor-dot]");
+            const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+            window.addEventListener("mousemove", function(e) {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, {duration: 500, fill: "forwards"});
+    });
+        
+    </script>
+</body>
+</html>
